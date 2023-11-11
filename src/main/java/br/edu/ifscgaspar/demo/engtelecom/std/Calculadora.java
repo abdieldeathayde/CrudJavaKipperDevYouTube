@@ -4,18 +4,22 @@ import javax.jws.WebService;
 import javax.jws.WebMethod;
 import javax.jws.WebParam;
 
-@WebServices(serviceName = "Calculadora")
+@WebService(serviceName = "Calculadora")
 public class Calculadora {
 
-    @Method(operationName = "somar")
+    @WebMethod(operationName = "somar")
     public int somar(@WebParam(name = "a") int a, @WebParam(name = "b") int b) {
-        int c = a + b;
+        int c;
+        c = a + b;
+
         return c;
     }
 
     @WebMethod(operationName = "subtrair")
     public int subtrair(@WebParam(name = "a") int a, @WebParam(name = "b") int b) {
-        int c = a - b;
+        int c;
+        c = a - b;
+
         return c;
     }
 }
